@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+	<script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>	
+{% endblock %}
+
+{% block content %}
+	<h2>Bienvenido {{user}}</h2>	
+	<a href="/log-out">Salir</a>
+
+	<h4>Usuarios Logueados</h4>
+	<ul id="users">
+		{% for person in users %}
+			<li>{{person}}</li>
+		{% endfor %}
+	</ul>
+
+	<h4>Datos de la Tare ID: {{id}}</h4>
+	<ul>
+		<li>Usuario: {{owner}}</li>
+		<li>Titulo: {{title}}</li>
+		<li>Descripcion: {{desc}}</li>
+	</ul>
+
+	<div id="main">
+		
+
+	</div>
+{% endblock %}
